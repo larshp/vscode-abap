@@ -1,5 +1,5 @@
 {
-	"name": "language-abap",
+	"name": "vscode-abap",
 	"displayName": "ABAP",
 	"description": "Syntax highlighting for ABAP",
 	"version": "0.1.0",
