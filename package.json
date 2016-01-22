@@ -1,9 +1,9 @@
 {
-	"name": "abap",
+	"name": "language-abap",
 	"displayName": "ABAP",
 	"description": "Syntax highlighting for ABAP",
 	"version": "0.1.0",
-	"publisher": "larshp",
+	"publisher": "Lars Hvam",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
