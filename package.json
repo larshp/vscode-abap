@@ -3,13 +3,17 @@
 	"displayName": "ABAP",
 	"description": "Syntax highlighting for ABAP",
 	"version": "0.1.0",
-	"publisher": "Lars Hvam",
+	"publisher": "larshp",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
 	"categories": [
 		"Languages"
 	],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/larshp/vscode-abap.git"
+    },
 	"contributes": {
 		"languages": [{
 			"id": "abap",
