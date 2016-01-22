@@ -1,0 +1,25 @@
+{
+	"name": "abap",
+	"displayName": "ABAP",
+	"description": "Syntax highlighting for ABAP",
+	"version": "0.1.0",
+	"publisher": "larshp",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "abap",
+			"aliases": ["ABAP", "abap"],
+			"extensions": [".abap",".ABAP"]
+		}],
+		"grammars": [{
+			"language": "abap",
+			"scopeName": "source.abap",
+			"path": "./syntaxes/abap.tmLanguage"
+		}]
+	}
+}
