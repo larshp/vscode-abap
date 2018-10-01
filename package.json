@@ -10,6 +10,9 @@
 	"categories": [
 		"Languages"
 	],
+    "bugs": {
+      "url": "https://github.com/larshp/vscode-abap/issuess"
+    },
     "repository": {
       "type": "git",
       "url": "https://github.com/larshp/vscode-abap.git"
