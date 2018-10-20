@@ -25,6 +25,7 @@
 		"languages": [
 			{
 				"id": "abap",
+				"configuration": "./language-configuration.json",
 				"aliases": [
 					"ABAP",
 					"abap"
