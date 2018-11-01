@@ -39,5 +39,6 @@
 				"path": "./syntaxes/abap.tmLanguage"
 			}
 		]
-	}
+	},
+    "icon": "icon.png"
 }
