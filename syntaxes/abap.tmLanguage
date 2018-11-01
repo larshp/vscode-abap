@@ -52,14 +52,48 @@
 				<string>comment.line.pragma.abap</string>
 			</dict>
 			<dict>
+				<key>match</key>
+				<string>\b[0-9]+(\b|\.|,)</string>
+				<key>name</key>
+				<string>constant.numeric.abap</string>
+			</dict>
+			<dict>
 				<key>begin</key>
-				<string>(?&lt;!\\)\|(.*?)</string>
+				<string>(?&lt;!\\)(\|)(.*?)</string>
 				<key>end</key>
-				<string>(?&lt;!\\)\|</string>
+				<string>(?&lt;!\\)(\|)</string>
 				<key>name</key>
 				<string>string.interpolated.abap</string>
+				<key>beginCaptures</key>
+				<dict>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>constant.character.escape.abap</string>
+					</dict>
+				</dict>
+				<key>endCaptures</key>
+				<dict>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>constant.character.escape.abap</string>
+					</dict>
+				</dict>
 				<key>patterns</key>
 				<array>
+					<dict>
+						<key>match</key>
+						<string>({ )|( })</string>
+						<key>name</key>
+						<string>constant.character.escape</string>
+					</dict>
+					<dict>
+						<key>match</key>
+						<string>(?&lt;={ ).*?(?= })</string>
+						<key>name</key>
+						<string>variable.other.abap</string>
+					</dict>
 					<dict>
 						<key>match</key>
 						<string>\\\|</string>
@@ -104,13 +138,18 @@
 			</dict>
 			<dict>
 				<key>begin</key>
-				<string>(?i)^\s*(class|method|form)\s+(?=[a-z_][a-z_0-9])</string>
+				<string>(?i)^\s*(class|method|form)\s([a-z_][a-z_0-9]*)</string>
 				<key>beginCaptures</key>
 				<dict>
 					<key>1</key>
 					<dict>
 						<key>name</key>
 						<string>storage.type.block.abap</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.type.block.abap</string>
 					</dict>
 				</dict>
 				<key>end</key>
@@ -119,6 +158,12 @@
 				<string>meta.block.begin.implementation.abap</string>
 				<key>patterns</key>
 				<array>
+					<dict>
+						<key>match</key>
+						<string>(?ix)(^|\s+)(definition|implementation|public|inheriting\s+from|final|abstract|shared\s+memory\s+enabled|(global)*\s*friends|(create\s+(public|protected|private))|for\s+testing|risk\s+level\s+(critical|dangerous|harmless))|duration\s(short|medium|long)(?=\s+|\.)</string>
+						<key>name</key>
+						<string>storage.modifier.class.abap</string>
+					</dict>
 					<dict>
 						<key>begin</key>
 						<string>(?=[A-Za-z_][A-Za-z0-9_]*)</string>
@@ -146,7 +191,7 @@
 				<key>match</key>
 				<string>(?i)(&lt;[A-Za-z_][A-Za-z0-9_]*&gt;)</string>
 				<key>name</key>
-				<string>meta.variable.other.field.symbol.abap</string>
+				<string>variable.other.field.symbol.abap</string>
 			</dict>
 			<dict>
 				<key>include</key>
@@ -165,7 +210,7 @@
 				<string>#abaptypes</string>
 			</dict>
 			<dict>
-			<key>include</key>
+				<key>include</key>
 				<string>#system_fields</string>
 			</dict>
 		</array>
@@ -174,7 +219,7 @@
 			<key>abap_constants</key>
 			<dict>
 				<key>match</key>
-				<string>(?ix)\s(initial|null|space|abap_true|abap_false|table_line)\s</string>
+				<string>(?ix)(?&lt;=\s)(initial|null|space|abap_true|abap_false|table_line)(?=\s|\.|,)</string>
 				<key>name</key>
 				<string>constant.language.abap</string>
 			</dict>
@@ -188,14 +233,14 @@
 			<key>arithmetic_operator</key>
 			<dict>
 				<key>match</key>
-				<string>\s(\+|\-|\*|\*\*|/|%)\s</string>
+				<string>(?&lt;=\s)(\+|\-|\*|\*\*|/|%)(?=\s)</string>
 				<key>name</key>
 				<string>keyword.operator.arithmetic.abap</string>
 			</dict>
 			<key>comparison_operator</key>
 			<dict>
 				<key>match</key>
-				<string>(?i)\s(&lt;|&gt;|&lt;\=|&gt;\=|\=|&lt;&gt;|eq|ne|lt|le|gt|ge|cs)\s</string>
+				<string>(?i)(?&lt;=\s)(&lt;|&gt;|&lt;\=|&gt;\=|\=|&lt;&gt;|eq|ne|lt|le|gt|ge|cs|cp)(?=\s)</string>
 				<key>name</key>
 				<string>keyword.operator.comparison.abap</string>
 			</dict>
@@ -214,62 +259,10 @@
 				<key>match</key>
 				<string>[A-Za-z_][A-Za-z0-9_]*</string>
 			</dict>
-			<key>hyphenated_keywords</key>
-			<dict>
-				<key>match</key>
-				<string>(?ix)(^|\s)(add-corresponding|
-	         authority-check|
-	         break-point|
-	         class-data|
-	         class-method|
-	         class-methods|
-	         divide-corresponding|
-	         display-mode|
-	         editor-call|
-	         end-of-definition|
-	         end-of-page|
-	         end-of-selection|
-	         field-groups|
-	         field-symbols|
-	         function-pool|
-	         left-justified|
-	         line-count|
-	         line-size|
-	         message-id|
-	         move-corresponding|
-	         multiply-corresponding|
-	         new-line|
-	         new-page|
-	         new-section|
-                 no-gap|
-                 no-sign|
-                 no-zero|
-	         print-control|
-	         read-only|
-	         right-justified|
-	         rp-provide-from-last|
-	         select-options|
-	         selection-screen|
-	         start-of-selection|
-	         subtract-corresponding|
-	         syntax-check|
-	         syntax-trace|
-	         system-call|
-	         top-of-page|
-	         type-pool|
-	         type-pools
-			  )(?=\s|\.|:)</string>
-				<key>name</key>
-				<string>keyword.control.hyphenated.abap</string>
-			</dict>
 			<key>keywords</key>
 			<dict>
 				<key>patterns</key>
 				<array>
-					<dict>
-						<key>include</key>
-						<string>#hyphenated_keywords</string>
-					</dict>
 					<dict>
 						<key>include</key>
 						<string>#main_keywords</string>
@@ -280,10 +273,6 @@
 					</dict>
 					<dict>
 						<key>include</key>
-						<string>#short_keywords</string>
-					</dict>
-					<dict>
-						<key>include</key>
 						<string>#keywords_followed_by_braces</string>
 					</dict>
 				</array>
@@ -291,7 +280,7 @@
 			<key>logical_operator</key>
 			<dict>
 				<key>match</key>
-				<string>(?i)\s(is|not|or|and)\s</string>
+				<string>(?i)(?&lt;=\s)(not|or|and)(?=\s)</string>
 				<key>name</key>
 				<string>keyword.operator.arithmetic.abap</string>
 			</dict>
@@ -305,33 +294,33 @@
 			<key>main_keywords</key>
 			<dict>
 				<key>match</key>
-				<string>(?ix)(^|\s)(
-	        abstract|alias|aliases|append|appending|ascending|assert|assign|assigning|
-	        back|begin|binary|bound|byte|
-	        call|cast|changing|check|clear|close|cnt|collect|commit|character|
-	        corresponding|communication|component|compute|concatenate|condense|constants|
+				<string>(?ix)(?&lt;=^|\s)(
+	        abstract|add|add-corresponding|adjacent|alias|aliases|all|append|appending|ascending|as|assert|assign|assigning|authority-check|
+	        back|begin|binary|bound|break-point|by|byte|
+	        call|cast|changing|check|class-data|class-method|class-methods|clear|close|cnt|collect|commit|character|
+	        corresponding|communication|component|compute|concatenate|condense|constants|conv|
 	        controls|convert|create|currency|
-	        data|descending|default|define|definition|deferred|delete|describe|detail|divide|
+	        data|descending|default|define|deferred|delete|describe|detail|divide|divide-corresponding|display-mode|duplicates|
 	        deleting|
-	        end|endexec|endfunction|ending|
-	        endinterface|endmodule|
+	        editor-call|end|endexec|endfunction|ending|endinterface|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|
 	        endprovide|endselect|endtry|endwhile|event|events|exec|exit|export|
 	        exporting|extract|exception|exceptions|
-	        first|fetch|fields|format|free|from|function|find|for|
-	        generate|
+	        field-symbols|field-groups|first|fetch|fields|format|free|from|function|find|for|function-pool|
+	        generate|get|
 	        hide|
 	        import|importing|index|infotypes|initial|initialization|
-	        interface|interfaces|input|insert|implementation|into|
+	        id|is|in|interface|interfaces|input|insert|into|
 			key|
-	        leave|like|line|load|local|length|left|leading|lower|
-	        method|message|methods|modify|module|move|multiply|match|
-	        occurrence|object|obligatory|overlay|optional|others|occurrences|occurs|offset|
-	        pack|parameters|perform|position|private|program|protected|provide|public|
+	        left-justified|leave|like|line|line-count|line-size|load|local|length|left|leading|lower|
+	        method|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|
+			new|new-line|new-page|new-section|no|no-gap|no-sign|no-zero|number|
+	        occurrence|object|obligatory|of|overlay|optional|others|occurrences|occurs|offset|
+	        pack|parameters|perform|places|position|print-control|private|program|protected|provide|public|put|
 	        radiobutton|raising|ranges|receive|receiving|redefinition|reference|refresh|regex|reject|results|
-	        replace|report|reserve|restore|return|returning|rollback|read|
-	        scan|screen|scroll|search|select|separated|shift|single|skip|sort|sorted|split|standard|starting|
-	        statics|step|stop|structure|submatches|submit|subtract|summary|suppress|section|
-	        tables|table|testing|then|times|titlebar|transfer|transformation|translate|transporting|types|type|
+	        ref|replace|report|reserve|restore|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|
+	        scan|screen|scroll|search|select|select-options|selection-screen|
+	        separated|set|shift|single|skip|sort|sorted|split|standard|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|
+	        tables|table|testing|test-seam|test-injection|then|times|titlebar|to|top-of-page|trailing|transfer|transformation|translate|transporting|types|type|type-pool|type-pools|
 	        unassign|uline|unpack|update|using|
 	        value|
 	        when|while|window|write|where|with|work
@@ -390,13 +379,6 @@
 				<string>\s(&amp;&amp;|\?\=)\s</string>
 				<key>name</key>
 				<string>keyword.operator.other.abap</string>
-			</dict>
-			<key>short_keywords</key>
-			<dict>
-				<key>match</key>
-				<string>(?i)\s(add|all|as|by|in|get|no|of|put|ref|set|sum|to)(?=\s|\.|:)</string>
-				<key>name</key>
-				<string>keyword.control.short.abap</string>
 			</dict>
 			<key>string_operators</key>
 			<dict>
