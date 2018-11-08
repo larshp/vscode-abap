@@ -10,6 +10,7 @@
 	"categories": [
 		"Programming Languages"
 	],
+	"keywords": ["abap"],
 	"bugs": {
 		"url": "https://github.com/larshp/vscode-abap/issuess"
 	},
