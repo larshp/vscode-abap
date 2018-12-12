@@ -207,6 +207,10 @@
 			</dict>
 			<dict>
 				<key>include</key>
+				<string>#builtin_functions</string>
+			</dict>
+			<dict>
+				<key>include</key>
 				<string>#abaptypes</string>
 			</dict>
 			<dict>
@@ -328,14 +332,6 @@
 				<key>name</key>
 				<string>keyword.control.simple.abap</string>
 			</dict>
-			<key>math_operators</key>
-			<dict>
-				<key>match</key>
-				<string>(?ix)\s(abs|sign|ceil|floor|trunc|frac|acos|asin|
-	                atan|cos|sin|tan|cosh|sinh|tanh|exp|log|log10|sqrt)\(</string>
-				<key>name</key>
-				<string>keyword.operator.math.abap</string>
-			</dict>
 			<key>keywords_followed_by_braces</key>
 			<dict>
 				<key>match</key>
@@ -350,14 +346,6 @@
 					<dict>
 						<key>include</key>
 						<string>#other_operator</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#math_operators</string>
-					</dict>
-					<dict>
-						<key>include</key>
-						<string>#string_operators</string>
 					</dict>
 					<dict>
 						<key>include</key>
@@ -380,13 +368,13 @@
 				<key>name</key>
 				<string>keyword.operator.other.abap</string>
 			</dict>
-			<key>string_operators</key>
-			<dict>
-				<key>match</key>
-				<string>(?ix)\s(strlen|xstrlen|charlen|lines|numofchar|dbmaxlen)\(</string>
-				<key>name</key>
-				<string>keyword.operator.string.abap</string>
-			</dict>
+			<key>builtin_functions</key>
+      <dict>
+        <key>match</key>
+        <string>(?ix)(?&lt;=\s)(abs|sign|ceil|floor|trunc|frac|acos|asin|atan|cos|sin|tan|cosh|sinh|tanh|exp|log|log10|sqrt|strlen|xstrlen|charlen|lines|numofchar|dbmaxlen|round|rescale|nmax|nmin|cmax|cmin|boolc|boolx|xsdbool|contains|contains_any_of|contains_any_not_of|matches|line_exists|ipow|char_off|count|count_any_of|count_any_not_of|distance|condense|concat_lines_of|escape|find|find_end|find_any_of|find_any_not_of|insert|match|repeat|replace|reverse|segment|shift_left|shift_right|substring|substring_after|substring_from|substring_before|substring_to|to_upper|to_lower|to_mixed|from_mixed|translate|bit-set|line_index)(?=\()</string>
+        <key>name</key>
+        <string>entity.name.function.builtin.abap</string>
+      </dict>
 		</dict>
 		<key>scopeName</key>
 		<string>source.abap</string>
