@@ -138,7 +138,7 @@
 			</dict>
 			<dict>
 				<key>begin</key>
-				<string>(?i)^\s*(class|method|form)\s([a-z_][a-z_0-9]*)</string>
+				<string>(?i)^\s*(class|method|form)\s([a-z_/][a-z_0-9/]*)</string>
 				<key>beginCaptures</key>
 				<dict>
 					<key>1</key>
@@ -160,7 +160,7 @@
 				<array>
 					<dict>
 						<key>match</key>
-						<string>(?ix)(^|\s+)(definition|implementation|public|inheriting\s+from|final|abstract|shared\s+memory\s+enabled|(global)*\s*friends|(create\s+(public|protected|private))|for\s+testing|risk\s+level\s+(critical|dangerous|harmless))|duration\s(short|medium|long)(?=\s+|\.)</string>
+						<string>(?ix)(^|\s+)(definition|implementation|public|inheriting\s+from|final|deferred|abstract|shared\s+memory\s+enabled|(global|local)*\s*friends|(create\s+(public|protected|private))|for\s+testing|risk\s+level\s+(critical|dangerous|harmless))|duration\s(short|medium|long)(?=\s+|\.)</string>
 						<key>name</key>
 						<string>storage.modifier.class.abap</string>
 					</dict>
@@ -253,8 +253,7 @@
 				<key>match</key>
 				<string>(?ix)(^|\s)(
 	        at|case|catch|continue|do|elseif|else|endat|endcase|enddo|endif|
-	        endloop|endon|if|loop|on|raise|try
-			 )(?=\s|\.|:)</string>
+	        endloop|endon|if|loop|on|raise|try)(?=\s|\.|:)</string>
 				<key>name</key>
 				<string>keyword.control.flow.abap</string>
 			</dict>
@@ -299,36 +298,36 @@
 			<dict>
 				<key>match</key>
 				<string>(?ix)(?&lt;=^|\s)(
-	        abstract|add|add-corresponding|adjacent|alias|aliases|all|append|appending|ascending|as|assert|assign|assigning|authority-check|
-	        back|begin|binary|bound|break-point|by|byte|
+	        abstract|add|add-corresponding|adjacent|alias|aliases|all|append|appending|ascending|as|assert|assign|assigned|assigning|association|authority-check|
+	        back|begin|binary|block|bound|break-point|by|byte|
 	        call|cast|changing|check|class-data|class-method|class-methods|clear|close|cnt|collect|commit|character|
-	        corresponding|communication|component|compute|concatenate|condense|constants|conv|
+	        corresponding|communication|component|compute|concatenate|condense|constants|conv|count|
 	        controls|convert|create|currency|
-	        data|descending|default|define|deferred|delete|describe|detail|divide|divide-corresponding|display-mode|duplicates|
+	        data|descending|default|define|deferred|delete|describe|detail|display|divide|divide-corresponding|display-mode|duplicates|
 	        deleting|
-	        editor-call|end|endexec|endfunction|ending|endinterface|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|
-	        endprovide|endselect|endtry|endwhile|event|events|exec|exit|export|
+	        editor-call|end|endexec|endfunction|ending|endinterface|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|
+	        endprovide|endselect|endtry|endwhile|enum|event|events|exec|exit|export|
 	        exporting|extract|exception|exceptions|
-	        field-symbols|field-groups|first|fetch|fields|format|free|from|function|find|for|function-pool|
+	        field-symbols|field-groups|field|first|fetch|fields|format|frame|free|from|function|find|for|function-pool|
 	        generate|get|
-	        hide|
+	        handle|hide|hashed|
 	        import|importing|index|infotypes|initial|initialization|
 	        id|is|in|interface|interfaces|input|insert|into|
 			key|
-	        left-justified|leave|like|line|line-count|line-size|load|local|length|left|leading|lower|
-	        method|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|
-			new|new-line|new-page|new-section|no|no-gap|no-sign|no-zero|number|
-	        occurrence|object|obligatory|of|overlay|optional|others|occurrences|occurs|offset|
+	        left-justified|leave|like|line|line-count|line-size|load|local|log-point|length|left|leading|lower|
+	        matchcode|method|mesh|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|
+			new|new-line|new-page|new-section|no|no-gap|no-sign|no-zero|non-unique|number|
+	        occurrence|object|obligatory|of|overlay|optional|others|occurrences|occurs|offset|options|
 	        pack|parameters|perform|places|position|print-control|private|program|protected|provide|public|put|
-	        radiobutton|raising|ranges|receive|receiving|redefinition|reference|refresh|regex|reject|results|
-	        ref|replace|report|reserve|restore|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|
-	        scan|screen|scroll|search|select|select-options|selection-screen|
-	        separated|set|shift|single|skip|sort|sorted|split|standard|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|
-	        tables|table|testing|test-seam|test-injection|then|times|titlebar|to|top-of-page|trailing|transfer|transformation|translate|transporting|types|type|type-pool|type-pools|
-	        unassign|uline|unpack|update|using|
+	        radiobutton|raising|ranges|receive|receiving|redefinition|reference|refresh|regex|reject|results|requested|
+	        ref|replace|report|reserve|restore|result|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|run|
+	        scan|screen|scroll|search|select|select-options|selection-screen|stamp|source|subkey|
+	        separated|set|shift|single|skip|sort|sorted|split|standard|stamp|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|
+	        tables|table|task|testing|test-seam|test-injection|then|time|times|title|titlebar|to|top-of-page|trailing|transfer|transformation|translate|transporting|types|type|type-pool|type-pools|
+	        unassign|unique|uline|unpack|update|upper|using|
 	        value|
-	        when|while|window|write|where|with|work
-			 )(?=\s|\.|:)</string>
+	        when|while|window|write|where|with|work|
+		xml)(?=\s|\.|:|,)</string>
 				<key>name</key>
 				<string>keyword.control.simple.abap</string>
 			</dict>
@@ -369,12 +368,12 @@
 				<string>keyword.operator.other.abap</string>
 			</dict>
 			<key>builtin_functions</key>
-      <dict>
-        <key>match</key>
-        <string>(?ix)(?&lt;=\s)(abs|sign|ceil|floor|trunc|frac|acos|asin|atan|cos|sin|tan|cosh|sinh|tanh|exp|log|log10|sqrt|strlen|xstrlen|charlen|lines|numofchar|dbmaxlen|round|rescale|nmax|nmin|cmax|cmin|boolc|boolx|xsdbool|contains|contains_any_of|contains_any_not_of|matches|line_exists|ipow|char_off|count|count_any_of|count_any_not_of|distance|condense|concat_lines_of|escape|find|find_end|find_any_of|find_any_not_of|insert|match|repeat|replace|reverse|segment|shift_left|shift_right|substring|substring_after|substring_from|substring_before|substring_to|to_upper|to_lower|to_mixed|from_mixed|translate|bit-set|line_index)(?=\()</string>
-        <key>name</key>
-        <string>entity.name.function.builtin.abap</string>
-      </dict>
+			<dict>
+				<key>match</key>
+				<string>(?ix)(?&lt;=\s)(abs|sign|ceil|floor|trunc|frac|acos|asin|atan|cos|sin|tan|cosh|sinh|tanh|exp|log|log10|sqrt|strlen|xstrlen|charlen|lines|numofchar|dbmaxlen|round|rescale|nmax|nmin|cmax|cmin|boolc|boolx|xsdbool|contains|contains_any_of|contains_any_not_of|matches|line_exists|ipow|char_off|count|count_any_of|count_any_not_of|distance|condense|concat_lines_of|escape|find|find_end|find_any_of|find_any_not_of|insert|match|repeat|replace|reverse|segment|shift_left|shift_right|substring|substring_after|substring_from|substring_before|substring_to|to_upper|to_lower|to_mixed|from_mixed|translate|bit-set|line_index)(?=\()</string>
+				<key>name</key>
+				<string>entity.name.function.builtin.abap</string>
+			</dict>
 		</dict>
 		<key>scopeName</key>
 		<string>source.abap</string>
