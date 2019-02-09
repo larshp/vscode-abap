@@ -53,6 +53,12 @@
 			</dict>
 			<dict>
 				<key>match</key>
+				<string>(?i)(?&lt;=\s)([a-z_/][a-z_0-9/]*)(?=\s+=\s+)</string>
+				<key>name</key>
+				<string>variable.other.abap</string>
+			</dict>
+			<dict>
+				<key>match</key>
 				<string>\b[0-9]+(\b|\.|,)</string>
 				<key>name</key>
 				<string>constant.numeric.abap</string>
@@ -334,9 +340,20 @@
 			<key>keywords_followed_by_braces</key>
 			<dict>
 				<key>match</key>
-				<string>(?ix)\b(data|value|field-symbol)(?=\()</string>
-				<key>name</key>
-				<string>keyword.control.simple.abap</string>
+				<string>(?ix)\b(data|value|field-symbol)\((&lt;?[a-z_\/][a-z_0-9\/]*&gt;?)\)</string>
+				<key>captures</key>
+				<dict>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>keyword.control.simple.abap</string>
+					</dict>
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>variable.other.abap</string>
+					</dict>
+				</dict>
 			</dict>
 			<key>operators</key>
 			<dict>
