@@ -407,7 +407,7 @@
 			<key>arithmetic_operator</key>
 			<dict>
 				<key>match</key>
-				<string>(?&lt;=\s)(\+|\-|\*|\*\*|/|%)(?=\s)</string>
+				<string>(?i)(?&lt;=\s)(\+|\-|\*|\*\*|/|%|DIV|MOD|BIT-AND|BIT-OR|BIT-XOR|BIT-NOT)(?=\s)</string>
 				<key>name</key>
 				<string>keyword.operator.arithmetic.abap</string>
 			</dict>
@@ -478,18 +478,18 @@
 	        editor-call|end|endexec|endfunction|ending|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|
 	        endprovide|endselect|endtry|endwhile|enum|event|events|exec|exit|export|
 	        exporting|extract|exception|exceptions|
-	        field-symbols|field-groups|field|first|fetch|fields|format|frame|free|from|function|find|for|function-pool|
+	        field-symbols|field-groups|field|first|fetch|fields|format|frame|free|from|function|find|for|found|function-pool|
 	        generate|get|
 	        handle|hide|hashed|
 	        include|import|importing|index|infotypes|initial|initialization|
-	        id|is|in|interface|interfaces|input|insert|into|
+	        id|is|in|interface|interfaces|init|input|insert|instance|into|
 			key|
 	        left-justified|leave|like|line|line-count|line-size|load|local|log-point|length|left|leading|lower|
 	        matchcode|method|mesh|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|
-			new|new-line|new-page|new-section|no|no-gap|no-gaps|no-sign|no-zero|non-unique|number|
-	        occurrence|object|obligatory|of|overlay|optional|others|occurrences|occurs|offset|options|
+			new|new-line|new-page|new-section|next|no|no-gap|no-gaps|no-sign|no-zero|non-unique|number|
+	        occurrence|object|obligatory|of|output|overlay|optional|others|occurrences|occurs|offset|options|
 	        pack|parameters|perform|places|position|print-control|private|program|protected|provide|public|put|
-	        radiobutton|raising|ranges|receive|receiving|redefinition|reference|refresh|regex|reject|results|requested|
+	        radiobutton|raising|ranges|receive|receiving|redefinition|reduce|reference|refresh|regex|reject|results|requested|
 	        ref|replace|report|reserve|restore|result|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|run|
 	        scan|screen|scroll|search|select|select-options|selection-screen|stamp|source|subkey|
 	        separated|set|shift|single|skip|sort|sorted|split|standard|stamp|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|switch|
