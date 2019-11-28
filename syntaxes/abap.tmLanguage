@@ -394,7 +394,7 @@
 					<key>match</key>
 					<string>(?ix)\s(abap_bool|string|xstring|any|clike|csequence|numeric|xsequence|c|n|i|p|f|d|t|x)(?=\s|\.|,)</string>
 					<key>name</key>
-					<string>support.type.abap</string>	
+					<string>support.type.abap</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -409,14 +409,14 @@
 				<key>match</key>
 				<string>(?i)(?&lt;=\s)(\+|\-|\*|\*\*|/|%|DIV|MOD|BIT-AND|BIT-OR|BIT-XOR|BIT-NOT)(?=\s)</string>
 				<key>name</key>
-				<string>keyword.operator.arithmetic.abap</string>
+				<string>keyword.operator.abap</string>
 			</dict>
 			<key>comparison_operator</key>
 			<dict>
 				<key>match</key>
 				<string>(?i)(?&lt;=\s)(&lt;|&gt;|&lt;\=|&gt;\=|\=|&lt;&gt;|eq|ne|lt|le|gt|ge|cs|cp)(?=\s)</string>
 				<key>name</key>
-				<string>keyword.operator.comparison.abap</string>
+				<string>keyword.operator.abap</string>
 			</dict>
 			<key>control_keywords</key>
 			<dict>
@@ -455,7 +455,7 @@
 				<key>match</key>
 				<string>(?i)(?&lt;=\s)(not|or|and)(?=\s)</string>
 				<key>name</key>
-				<string>keyword.operator.arithmetic.abap</string>
+				<string>keyword.operator.abap</string>
 			</dict>
 			<key>system_fields</key>
 			<dict>
@@ -470,26 +470,26 @@
 				<string>(?ix)(?&lt;=^|\s)(
 	        abstract|add|add-corresponding|adjacent|alias|aliases|all|append|appending|ascending|as|assert|assign|assigned|assigning|association|authority-check|
 	        back|begin|binary|block|bound|break-point|by|byte|
-	        call|cast|changing|check|class-data|class-method|class-methods|clear|close|cnt|collect|commit|cond|character|
+	        call|cast|changing|check|class-data|class-method|class-methods|class-pool|clear|close|cnt|collect|commit|cond|character|
 	        corresponding|communication|component|compute|concatenate|condense|constants|conv|count|
 	        controls|convert|create|currency|
-	        data|descending|default|define|deferred|delete|describe|detail|display|divide|divide-corresponding|display-mode|duplicates|
+	        data|descending|default|define|deferred|delete|describe|destination|detail|display|divide|divide-corresponding|display-mode|duplicates|
 	        deleting|
-	        editor-call|end|endexec|endfunction|ending|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|
+	        editor-call|empty|end|endexec|endfunction|ending|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|
 	        endprovide|endselect|endtry|endwhile|enum|event|events|exec|exit|export|
 	        exporting|extract|exception|exceptions|
 	        field-symbols|field-groups|field|first|fetch|fields|format|frame|free|from|function|find|for|found|function-pool|
 	        generate|get|
-	        handle|hide|hashed|
+	        handle|hide|hashed|header|
 	        include|import|importing|index|infotypes|initial|initialization|
-	        id|is|in|interface|interfaces|init|input|insert|instance|into|
+	        id|implemented|is|in|interface|interfaces|interface-pool|init|input|insert|instance|into|
 			key|
 	        left-justified|leave|like|line|line-count|line-size|load|local|log-point|length|left|leading|lower|
 	        matchcode|method|mesh|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|
 			new|new-line|new-page|new-section|next|no|no-gap|no-gaps|no-sign|no-zero|non-unique|number|
 	        occurrence|object|obligatory|of|output|overlay|optional|others|occurrences|occurs|offset|options|
-	        pack|parameters|perform|places|position|print-control|private|program|protected|provide|public|put|
-	        radiobutton|raising|ranges|receive|receiving|redefinition|reduce|reference|refresh|regex|reject|results|requested|
+	        pack|parameters|partially|perform|places|position|print-control|private|program|protected|provide|public|put|
+	        radiobutton|raising|range|ranges|receive|receiving|redefinition|reduce|reference|refresh|regex|reject|results|requested|
 	        ref|replace|report|reserve|restore|result|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|run|
 	        scan|screen|scroll|search|select|select-options|selection-screen|stamp|source|subkey|
 	        separated|set|shift|single|skip|sort|sorted|split|standard|stamp|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|switch|
@@ -544,9 +544,9 @@
 			<key>other_operator</key>
 			<dict>
 				<key>match</key>
-				<string>\s(&amp;&amp;|\?\=)\s</string>
+				<string>(?&lt;=\s)(&amp;&amp;|\?=|\+=|-=|\/=|\*=|&amp;&amp;=)(?=\s)</string>
 				<key>name</key>
-				<string>keyword.operator.other.abap</string>
+				<string>keyword.operator.abap</string>
 			</dict>
 			<key>builtin_functions</key>
 			<dict>
