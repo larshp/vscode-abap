@@ -20,7 +20,7 @@
 		"type": "git",
 		"url": "https://github.com/larshp/vscode-abap.git"
 	},
-	"icon": "./img/icon.png",
+	"icon": "img/icon.png",
 	"contributes": {
 		"languages": [
 			{
