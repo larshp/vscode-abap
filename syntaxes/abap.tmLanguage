@@ -73,7 +73,7 @@
 				<key>begin</key>
 				<string>(?&lt;!\\)(\|)(.*?)</string>
 				<key>end</key>
-				<string>(?&lt;!\\)(\|)</string>
+				<string>(?&lt;!\\)(\||(\\\\\|))</string>
 				<key>name</key>
 				<string>string.interpolated.abap</string>
 				<key>beginCaptures</key>
@@ -484,35 +484,35 @@
 				<key>match</key>
 				<string>(?ix)(?&lt;=^|\s)(
 	        abstract|access|add|add-corresponding|adjacent|alias|aliases|all|append|appending|ascending|as|assert|assign|assigned|assigning|association|authority-check|
-	        back|badi|begin|binary|block|bound|break-point|by|byte|
-	        call|cast|changing|check|checkbox|class-data|class-events|class-method|class-methods|class-pool|clear|close|cnt|collect|commit|comment|cond|character|
+	        back|badi|base|begin|between|binary|blanks|block|bound|break-point|by|byte|
+	        call|calling|cast|changing|check|checkbox|class-data|class-events|class-method|class-methods|class-pool|clear|close|cnt|collect|commit|comment|cond|character|
 	        corresponding|communication|comparing|component|compute|concatenate|condense|constants|conv|count|
 	        controls|convert|create|currency|
 	        data|descending|default|define|deferred|delete|describe|destination|detail|display|divide|divide-corresponding|display-mode|distinct|duplicates|
 	        deleting|
-	        editor-call|empty|end|endexec|endfunction|ending|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|
+	        editor-call|empty|end|endexec|endfunction|ending|endmodule|end-of-definition|end-of-page|end-of-selection|end-test-injection|end-test-seam|exit-command|extension|
 	        endprovide|endselect|endtry|endwhile|enum|event|events|excluding|exec|exit|export|
 	        exporting|extract|exception|exceptions|
 	        field-symbols|field-groups|field|first|fetch|fields|format|frame|free|from|function|find|for|found|function-pool|
-	        generate|get|
+	        generate|get|group|
 	        handle|handler|hide|hashed|header|help-request|
 	        include|import|importing|index|infotypes|initial|initialization|
-					id|implemented|is|in|inner|interface|interfaces|interface-pool|intervals|init|input|insert|instance|into|
+					id|implemented|ignoring|is|in|inner|interface|interfaces|interface-pool|intervals|init|input|insert|instance|into|
 					join|
 			key|
-	        left-justified|leave|like|line|lines|line-count|line-size|list-processing|load|local|log-point|length|left|leading|lower|
-	        matchcode|memory|method|mesh|message|message-id|methods|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|modif|
+	        language|left-justified|leave|like|line|lines|line-count|line-size|list-processing|load|local|log-point|length|left|leading|lower|
+	        matchcode|memory|method|mesh|message|message-id|methods|mode|modify|module|move|move-corresponding|multiply|multiply-corresponding|match|modif|
 			new|new-line|new-page|new-section|next|no|no-display|no-gap|no-gaps|no-sign|no-zero|non-unique|number|
 	        occurrence|object|obligatory|of|output|overlay|optional|others|occurrences|occurs|offset|options|
 	        pack|parameter|parameters|partially|perform|pf-status|places|position|print-control|private|privileged|program|protected|provide|public|put|
 	        radiobutton\s+group|raising|range|ranges|receive|receiving|redefinition|reduce|reference|refresh|regex|reject|results|requested|
-	        ref|replace|report|reserve|restore|result\s+xml|return|returning|right-justified|rollback|read|read-only|rp-provide-from-last|run|
-	        scan|screen|scroll|search|select|select-options|selection-screen|set|stamp|source|subkey|
-	        separated|set|shift|single|skip|sort|sorted|split|standard|stamp|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|switch|
-	        tables|table|task|testing|test-seam|test-injection|then|time|times|title|titlebar|to|top-of-page|trailing|transaction|transfer|transformation|translate|transporting|types|type|type-pool|type-pools|
-	        unassign|unique|uline|union|unpack|update|upper|using|user-command|
+	        ref|replace|report|reserve|respecting|restore|result\s+xml|return|returning|right|right-justified|rollback|read|read-only|rp-provide-from-last|run|
+	        scan|screen|scroll|search|select|select-options|selection-screen|set|stamp|state|source|subkey|
+	        seconds|separated|set|shift|single|skip|sort|sorted|split|standard|stamp|starting|start-of-selection|sum|subtract-corresponding|statics|step|stop|structure|submatches|submit|subtract|summary|supplied|suppress|section|syntax-check|syntax-trace|system-call|switch|
+	        tables|table|task|testing|test-seam|test-injection|textpool|then|time|times|title|titlebar|to|top-of-page|trailing|transaction|transfer|transformation|translate|transporting|types|type|type-pool|type-pools|
+	        unassign|unique|uline|union|unpack|until|update|upper|using|user-command|
 	        value|value-request|
-	        when|while|window|write|where|with|work|
+	        wait|when|while|window|write|where|with|work|
 		xml)(?=\s|\.|:|,)</string>
 				<key>name</key>
 				<string>keyword.control.simple.abap</string>
