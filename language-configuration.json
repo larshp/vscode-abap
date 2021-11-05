@@ -32,35 +32,35 @@
             ">"
         ],
         [
-            "METHOD",
+            "METHOD.",
             "ENDMETHOD."
         ],
         [
-            "method",
+            "method.",
             "endmethod."
         ],
         [
-            "IF",
+            "IF.",
             "ENDIF."
         ],
         [
-            "if",
+            "if.",
             "endif."
         ],
         [
-            "CASE",
+            "CASE.",
             "ENDCASE."
         ],
         [
-            "case",
+            "case.",
             "endcase."
         ],
         [
-            "LOOP",
+            "LOOP.",
             "ENDLOOP."
         ],
         [
-            "loop",
+            "loop.",
             "endloop."
         ],
         [
@@ -72,19 +72,19 @@
             "endtry."
         ],
         [
-            "WHILE",
+            "WHILE.",
             "ENDWHILE."
         ],
         [
-            "while",
+            "while.",
             "endwhile."
         ],
         [
-            "DO",
+            "DO.",
             "ENDDO."
         ],
         [
-            "do",
+            "do.",
             "enddo."
         ]
     ],
