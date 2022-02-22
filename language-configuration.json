@@ -30,62 +30,6 @@
         [
             "<",
             ">"
-        ],
-        [
-            "METHOD.",
-            "ENDMETHOD."
-        ],
-        [
-            "method.",
-            "endmethod."
-        ],
-        [
-            "IF.",
-            "ENDIF."
-        ],
-        [
-            "if.",
-            "endif."
-        ],
-        [
-            "CASE.",
-            "ENDCASE."
-        ],
-        [
-            "case.",
-            "endcase."
-        ],
-        [
-            "LOOP.",
-            "ENDLOOP."
-        ],
-        [
-            "loop.",
-            "endloop."
-        ],
-        [
-            "TRY.",
-            "ENDTRY."
-        ],
-        [
-            "try.",
-            "endtry."
-        ],
-        [
-            "WHILE.",
-            "ENDWHILE."
-        ],
-        [
-            "while.",
-            "endwhile."
-        ],
-        [
-            "DO.",
-            "ENDDO."
-        ],
-        [
-            "do.",
-            "enddo."
         ]
     ],
     "surroundingPairs": [
