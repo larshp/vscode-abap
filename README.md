@@ -22,3 +22,17 @@ If you want to customize the token colors, add an `editor.tokenColorCustomizatio
         }
     }
 ```
+
+## Folding / Regions
+
+Example region,
+
+```abap
+* #region Hello
+WRITE 'test'.
+* #endregion
+```
+
+this will make a foldable region, plus show up in the minimap,
+
+![Screenshot](https://raw.githubusercontent.com/larshp/vscode-abap/master/img/region.png)
