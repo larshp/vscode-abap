@@ -1,2 +1,4 @@
 img/screenshot*
 .vscode
+node_modules
+test

@@ -10,6 +10,9 @@
 	"categories": [
 		"Programming Languages"
 	],
+  "scripts": {
+    "test": "mocha --recursive --reporter progress test"
+  },
 	"keywords": [
 		"abap"
 	],
@@ -43,5 +46,9 @@
 				"path": "./syntaxes/abap.tmLanguage"
 			}
 		]
+	},
+	"devDependencies": {
+		"chai": "^5.1.1",
+		"mocha": "^10.4.0"
 	}
 }
