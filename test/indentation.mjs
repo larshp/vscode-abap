@@ -3,13 +3,18 @@ import fs from 'node:fs';
 
 function doesIncrease(abap) {
   const json = JSON.parse(fs.readFileSync("language-configuration.json", "utf8"));
-  console.dir(json);
-  return false;
+  const regex = new RegExp(json.indentationRules.increaseIndentPattern.pattern, json.indentationRules.increaseIndentPattern.flags);
+  return abap.match(regex) !== null;
 }
 
 describe('Test indentation increase and decrease', function() {
-  it('change', async () => {
+  it('WRITE, no increase', async () => {
     const abap = `WRITE 2.`
     chai.expect(doesIncrease(abap)).to.equal(false);
+  });
+
+  it('INCREASE, increase', async () => {
+    const abap = `IF foo = bar.`
+    chai.expect(doesIncrease(abap)).to.equal(true);
   });
 });
