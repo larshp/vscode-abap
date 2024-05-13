@@ -11,6 +11,7 @@
 		"Programming Languages"
 	],
   "scripts": {
+    "vscode:prepublish": "npm test",
     "test": "mocha --recursive --reporter progress test"
   },
 	"keywords": [
