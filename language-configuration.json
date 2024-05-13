@@ -58,7 +58,7 @@
         "decreaseIndentPattern": {
             "pattern": "^\\s*(ENDMETHOD|ENDIF|ENDLOOP|ENDCLASS|ENDCASE|ENDDO|ENDFORM|ELSE|ENDWHILE|ENDTRY|CATCH)\\.$",
             "flags": "i"
-        },
+        }
     },
     "folding": {
       "markers": {
