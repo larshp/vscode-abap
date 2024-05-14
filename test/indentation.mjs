@@ -13,7 +13,7 @@ describe('Test indentation increase and decrease', function() {
     chai.expect(doesIncrease(abap)).to.equal(false);
   });
 
-  it('INCREASE, increase', async () => {
+  it('IF, increase', async () => {
     const abap = `IF foo = bar.`
     chai.expect(doesIncrease(abap)).to.equal(true);
   });
