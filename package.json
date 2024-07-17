@@ -2,7 +2,7 @@
 	"name": "vscode-abap",
 	"displayName": "ABAP Syntax Highlighting",
 	"description": "Syntax highlighting for ABAP",
-	"version": "0.5.9",
+	"version": "0.5.10",
 	"publisher": "larshp",
 	"engines": {
 		"vscode": "^0.10.1"
