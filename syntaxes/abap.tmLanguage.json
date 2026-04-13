@@ -1,0 +1,220 @@
+{
+  "name": "ABAP",
+  "scopeName": "source.abap",
+  "fileTypes": ["abap", "ABAP"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#pragmas" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#class-definition" },
+    { "include": "#interface-definition" },
+    { "include": "#method-definition" },
+    { "include": "#operators" },
+    { "include": "#builtin-constants" },
+    { "include": "#keyword-control" },
+    { "include": "#keyword-modifier" },
+    { "include": "#keyword-type" },
+    { "include": "#keywords" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "match": "^\\*.*$",
+          "name": "comment.line.full.abap"
+        },
+        {
+          "match": "\".*$",
+          "name": "comment.line.partial.abap"
+        }
+      ]
+    },
+    "pragmas": {
+      "patterns": [
+        {
+          "match": "(?<![^\\s])##[A-Za-z_0-9]*",
+          "name": "constant.language.pragma.abap"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\\|",
+          "end": "\\|",
+          "name": "string.interpolated.abap",
+          "patterns": [
+            {
+              "begin": "\\{",
+              "end": "\\}",
+              "name": "meta.embedded.expression.abap",
+              "beginCaptures": { "0": { "name": "punctuation.section.embedded.begin.abap" } },
+              "endCaptures": { "0": { "name": "punctuation.section.embedded.end.abap" } },
+              "patterns": [
+                { "include": "#strings" },
+                { "include": "#numbers" },
+                { "include": "#operators" },
+                { "include": "#keyword-control" },
+                { "include": "#keyword-modifier" },
+                { "include": "#keyword-type" },
+                { "include": "#keywords" }
+              ]
+            },
+            {
+              "match": "\\\\[|{}\\\\]",
+              "name": "constant.character.escape.abap"
+            }
+          ]
+        },
+        {
+          "begin": "'",
+          "end": "'",
+          "name": "string.quoted.single.abap",
+          "patterns": [
+            {
+              "match": "''",
+              "name": "constant.character.escape.abap"
+            }
+          ]
+        },
+        {
+          "begin": "`",
+          "end": "`",
+          "name": "string.quoted.other.abap",
+          "patterns": [
+            {
+              "match": "``",
+              "name": "constant.character.escape.abap"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "(?<=\\s|=|^)\\d+(?=\\s|\\.|,|\\)|$)",
+          "name": "constant.numeric.abap"
+        }
+      ]
+    },
+    "class-definition": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(class|interface)\\s+([a-z_/][a-z_0-9/]*)",
+          "captures": {
+            "1": { "name": "keyword.type.abap" },
+            "2": { "name": "entity.name.type.class.abap" }
+          }
+        }
+      ]
+    },
+    "interface-definition": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(interface)\\s+([a-z_/][a-z_0-9/]*)",
+          "captures": {
+            "1": { "name": "keyword.type.abap" },
+            "2": { "name": "entity.name.type.interface.abap" }
+          }
+        }
+      ]
+    },
+    "method-definition": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(methods?|class-methods?)\\s+([a-z_/~][a-z_0-9/~]*)",
+          "captures": {
+            "1": { "name": "keyword.other.abap" },
+            "2": { "name": "entity.name.function.abap" }
+          }
+        },
+        {
+          "match": "(?i)(?<=^|\\s)(method)\\s+([a-z_/~][a-z_0-9/~]*)",
+          "captures": {
+            "1": { "name": "keyword.other.abap" },
+            "2": { "name": "entity.name.function.abap" }
+          }
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "=>|->|~|\\?=|<>|>=|<=|&&",
+          "name": "keyword.operator.abap"
+        },
+        {
+          "match": "(?<!=)[=](?!=)|[<>](?![>=])",
+          "name": "keyword.operator.abap"
+        },
+        {
+          "match": "(?<=\\s)[+\\-\\*/](?=\\s)",
+          "name": "keyword.operator.arithmetic.abap"
+        }
+      ]
+    },
+    "builtin-constants": {
+      "patterns": [
+        {
+          "match": "(?i)\\b(abap_true|abap_false|abap_undefined|space|table_line)\\b",
+          "name": "constant.language.abap"
+        },
+        {
+          "match": "(?i)\\b(sy)(?=-)",
+          "name": "variable.language.abap"
+        }
+      ]
+    },
+    "keyword-control": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(if|endif|else|elseif|case|endcase|when|do|enddo|while|endwhile|loop|endloop|try|endtry|catch|cleanup|return|exit|continue|check|times)(?=\\s|\\.|:|\\(|$)",
+          "name": "keyword.control.abap"
+        }
+      ]
+    },
+    "keyword-modifier": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(abstract|final|public|protected|private|section|testing|deferred|local|global|create|read-only|optional|redefinition|friends|shared|memory|enabled|load)(?=\\s|\\.|:|\\(|$)",
+          "name": "keyword.modifier.abap"
+        }
+      ]
+    },
+    "keyword-type": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(class|endclass|interface|endinterface|type|types|like|ref|table|of|standard|sorted|hashed|range|enum|structure|begin|end|key|unique|non-unique)(?=\\s|\\.|:|\\(|$)",
+          "name": "keyword.type.abap"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "(?i)(?<=^|\\s)(method|endmethod|function|endfunction|form|endform|definition|implementation|data|class-data|constants|statics|field-symbols|field-symbol|methods|class-methods|events|class-events|interfaces|aliases|include|importing|exporting|changing|returning|raising|receiving|exceptions|reference|into|with|default|value|to|from|for|inheriting|and|or|not|in|is|initial|between|unassign|clear|free|append|sort|move-corresponding|assert|concatenate|split|find|replace|condense|translate|shift|write|message|call|perform|raise|insert|read|delete|modify|select|assign|log-point|assigning|corresponding|new|conv|cond|switch|reduce|filter|where|group|at|ascending|descending|letting|base|then|next|until|every)(?=\\s|\\.|:|\\(|$)",
+          "name": "keyword.other.abap"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "match": "\\.",
+          "name": "punctuation.terminator.abap"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.abap"
+        },
+        {
+          "match": ":",
+          "name": "punctuation.separator.chained.abap"
+        }
+      ]
+    }
+  }
+}

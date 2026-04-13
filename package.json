@@ -1,11 +1,11 @@
 {
 	"name": "vscode-abap",
 	"displayName": "ABAP Syntax Highlighting",
-	"description": "Syntax highlighting for ABAP",
-	"version": "0.5.10",
+	"description": "Syntax highlighting for ABAP with keyword subcategories",
+	"version": "0.6.0",
 	"publisher": "larshp",
 	"engines": {
-		"vscode": "^0.10.1"
+		"vscode": "^1.75.0"
 	},
 	"categories": [
 		"Programming Languages"
@@ -14,7 +14,7 @@
 		"abap"
 	],
 	"bugs": {
-		"url": "https://github.com/larshp/vscode-abap/issuess"
+		"url": "https://github.com/larshp/vscode-abap/issues"
 	},
 	"repository": {
 		"type": "git",
@@ -40,7 +40,7 @@
 			{
 				"language": "abap",
 				"scopeName": "source.abap",
-				"path": "./syntaxes/abap.tmLanguage"
+				"path": "./syntaxes/abap.tmLanguage.json"
 			}
 		]
 	}
